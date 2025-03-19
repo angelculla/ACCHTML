@@ -235,28 +235,3 @@ void acchtml::addp(String txt) {
   html_buffer+=txt;
   html_buffer+="</P>\n";
 }
-
-
-
-
-
-void acchtml::addgauge1(uint16_t x, uint16_t y, uint16_t p) {
-  html_buffer+="<img style=\"position:absolute;left:";
-  html_buffer+=String(x);
-  html_buffer+="px;top:";
-  html_buffer+=String(y);
-  html_buffer+="px\" src=\"graph_pb\">\n";
-  x=x+3;
-  y=y+4;
-  if (p>100) p=100;
-  p=100-p;
-  p=p*2;
-  if (p==200) p=208;
-  html_buffer+="<img style=\"position:absolute;left:";
-  html_buffer+=String(x);
-  html_buffer+="px;top:";
-  html_buffer+=String(y);
-  html_buffer+="px;width:99px;height:";
-  html_buffer+=String(p);
-  html_buffer+="px\" src=\"graph_bl\">\n";
-}
