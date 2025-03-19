@@ -24,4 +24,5 @@ class acchtml: public WebServer {
   void formcheck(String title, String varname, bool val);
   void addbr();
   void addp(String txt);
+  void addtobuffer(String s);
 };
