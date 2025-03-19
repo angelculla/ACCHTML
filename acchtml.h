@@ -23,5 +23,4 @@ class acchtml {
   void formcheck(String title, String varname, bool val);
   void addbr();
   void addp(String txt);
-  void addgauge1(uint16_t x, uint16_t y, uint16_t p);
 };
