@@ -1,12 +1,13 @@
-class acchtml {
+#include <WebServer.h>
+
+
+
+class acchtml: public WebServer {
   private:
   String html_buffer;
   public:
-  WebServer server;
-  void start(uint16_t port);
-  void stop();
-  void begin(String rurl, uint16_t rtime);
-  void end();
+  void beginpage(String rurl, uint16_t rtime);
+  void endpage();
   void redirectto(String url);
   void adddivxy(uint16_t x, uint16_t y);
   void addtext(String txt, uint16_t fsize, uint16_t x, uint16_t y, String fcolor, String font);
