@@ -221,3 +221,10 @@ void acchtml::addp(String txt) {
   html_buffer+=txt;
   html_buffer+="</P>\n";
 }
+
+
+
+
+void acchtml::addtobuffer(String s) {
+  html_buffer+=s;
+}
