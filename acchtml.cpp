@@ -1,22 +1,8 @@
-#include <WString.h>
-#include <WebServer.h>
 #include <acchtml.h>
 
 
 
-void acchtml::start(uint16_t port) {
-  server.begin(port);
-}
-
-
-
-void acchtml::stop() {
-  server.stop();
-}
-
-
-
-void acchtml::begin(String rurl, uint16_t rtime) {
+void acchtml::beginpage(String rurl, uint16_t rtime) {
   html_buffer= "<!DOCTYPE html> <html>\n<HEAD>\n";
   html_buffer+="<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n";
   html_buffer+="<meta http-equiv=\"Pragma\" content=\"no-cache\">\n";
@@ -32,17 +18,17 @@ void acchtml::begin(String rurl, uint16_t rtime) {
 
 
 
-void acchtml::end() {
+void acchtml::endpage() {
   html_buffer+="</BODY></HTML>\n";
-  server.send(200,"text/html",html_buffer);
+  send(200,"text/html",html_buffer);
   html_buffer="";
 }
 
 
 
 void acchtml::redirectto(String url) {
-  begin(url,0);
-  end();
+  beginpage(url,0);
+  endpage();
 }
 
 
