@@ -1,4 +1,5 @@
-Easy to use html code generator for ESP32 in Arduino.
+acchtml is a class derived from WebServer that adds methods to generate HTML code in your applications for ESP32 and Arduino.
+
 The usage is very simple, in the example file there are several comments to understand it.
 
 All methods of acchtml uses absolute coordinates to locate their outputs
