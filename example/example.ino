@@ -7,7 +7,7 @@ Example code using acchtml library (HTML generator)
   you can use any tool to dump the images to text file
   I don't use filesystem because is more easy burn the ESP32 with only one binary
 - Uses WiFi and WebServer standard libraries
-- Set your WIFI settings properly. The IP is set manual to 192.168.1.250. Change it if needed
+- Set your WIFI settings properly. The IP is set manually to 192.168.1.250. Change it if needed
 ***************************************************************/
 
 
@@ -17,7 +17,7 @@ Example code using acchtml library (HTML generator)
 
 
 // Set here your WIFI settings
-const char* ssid = "MYWIFI";
+const char* ssid = "MYSSID";
 const char* password = "mypassword";
 
 IPAddress myip = {192,168,1,250};
@@ -52,8 +52,8 @@ void cgi_index() {                                                   // This is 
   html.forminputln("v2","","Input 2",30,30);                          // input for var "v2"
   html.formpassword("Password:");                                     // input for password. the var name is fixet to "PWD"
   html.formend("Accept");                                             // ends the form with "Accept" in de submit button
-  html.addimage("graph_pbs",500,100);                                 // normal image at (500,100)
-  html.endpage();                                                         // ends de html code and sends it
+  html.addimage("graph_pb",500,100);                                  // normal image at (500,100)
+  html.endpage();                                                     // ends de html code and sends it
 }
 
 
@@ -79,8 +79,8 @@ void cgi_graph_google() {                                            // cgi call
 
 
 
-void cgi_graph_pbs() {
-  html.send_P(200,"image/png",graph_pb,sizeof(graph_pb));     // cgi called when the navigator asks for the file graph_pbs
+void cgi_graph_pb() {
+  html.send_P(200,"image/png",graph_pb,sizeof(graph_pb));     // cgi called when the navigator asks for the file graph_pb
 }
 
 
@@ -114,7 +114,7 @@ void setup() {
   html.on("/",cgi_index);                                     // sets the supported pages to our management functions
   html.on("/formok.cgi",cgi_formok);
   html.on("/graph_google",cgi_graph_google);
-  html.on("/graph_pbs",cgi_graph_pbs);
+  html.on("/graph_pb",cgi_graph_pb);
   html.onNotFound(cgi_404);                                   // starts the webserver on port 80
   html.begin(80);
 
