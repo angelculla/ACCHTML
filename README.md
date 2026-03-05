@@ -4,7 +4,7 @@ The usage is very simple, in the example file there are several comments to unde
 
 All methods of acchtml uses absolute coordinates to locate their outputs
 
-It not uses filesystem to store images, they are embedded in the code to make the burn process very easy. See the file graph.inc in the example.
-you can use any tool to dump the images to text files in the style of graph.inc
+It not uses filesystem to store images, they are embedded in the code to make the burn process more easy. See the file graph.inc in the example.
+You can use the utility img2hex.cpp supplied to dump image files to hex text format.
 
 The example is a simple webserver application using acchtml library.
