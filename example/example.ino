@@ -16,9 +16,9 @@ Example code using acchtml library (HTML generator)
 #include "graph.inc"
 
 
-
-const char* ssid = "ACC";
-const char* password = "1234567890.";
+// Set here your WIFI settings
+const char* ssid = "MYWIFI";
+const char* password = "mypassword";
 
 IPAddress myip = {192,168,1,250};
 IPAddress mygateway = {192,168,1,1};
@@ -125,3 +125,4 @@ void setup() {
 
 void loop() {
 }
+
